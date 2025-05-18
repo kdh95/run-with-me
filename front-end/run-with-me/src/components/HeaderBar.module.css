@@ -1,0 +1,33 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-color: #121212;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.headerInner {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 좌우 끝으로 분리 */
+  padding: 0 1rem;
+}
+
+.left {
+  cursor: pointer;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.homeIcon {
+  color: #2563eb;
+}

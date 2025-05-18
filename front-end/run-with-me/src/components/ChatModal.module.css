@@ -1,0 +1,46 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* 반투명 어둠 */
+  backdrop-filter: blur(6px); /* ✅ 흐림 효과 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal {
+  .modal {
+    background-color: #1e1e1e;
+    color: white;
+    width: 100vw; /* ✅ 변경: 전체 너비 */
+    height: 80vh;
+    border-radius: 12px 12px 0 0; /* 상단만 둥글게 (옵션) */
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 2rem;
+}
