@@ -1,0 +1,15 @@
+/* 📄 src/styles/theme.module.css */
+
+:root {
+  --bg-main: #121212;
+  --bg-section: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #bbbbbb;
+
+  --btn-primary: #2563eb;
+  --btn-primary-hover: #1d4ed8;
+
+  --success: #22c55e;
+  --error: #ef4444;
+  --surface: #2c2c2c;
+}
