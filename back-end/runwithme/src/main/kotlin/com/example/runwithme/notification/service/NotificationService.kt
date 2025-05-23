@@ -38,4 +38,14 @@ class NotificationService(
         )
         println("🔔 WebSocket 알림 전송 → /topic/notifications/$receiverUserId")
     }
+
+
+    fun markAsRead(id: Long) {
+    val notification = notificationRepository.findById(id)
+        .orElseThrow { IllegalArgumentException("알림이 존재하지 않습니다.") }
+
+    val updated = notification.copy(isRead = true)
+    notificationRepository.save(updated)
+}
+
 }
