@@ -1,0 +1,20 @@
+.resultContainer {
+  padding: 20px; /* 결과 표시 영역 패딩 */
+  border-top: 1px solid var(--border-color); /* 상단 구분선 */
+  margin-top: 20px; /* 위쪽 요소와의 간격 */
+}
+
+.resultContainer h3 {
+  color: var(--electric-blue);
+  font-size: 2rem; /* 결과 폰트 크기 증가 */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  word-break: keep-all; /* 긴 결과가 줄바꿈될 때 단어 단위로 */
+}
+
+.resultContainer p {
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 1.1rem; /* 트레드밀 속도 폰트 크기 증가 */
+}

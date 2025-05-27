@@ -1,56 +1,24 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MatchPage from "./pages/MatchPage";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
-import HeaderBar from "./components/HeaderBar";
-import SubMenuBar from "./components/SubMenuBar";
-import MatchResultsPage from "./pages/MatchResultsPage";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import CalculatorPage from './pages/CalculatorPage';
+import './index.css'; // 전역 CSS 파일을 index.css로 가정 (App.css라면 해당 파일명으로)
 
-function App() {
-  // const [count, setCount] = useState(0)
-
-  // return (
-  //   <>
-  //     <div>
-  //       <a href="https://vite.dev" target="_blank">
-  //         <img src={viteLogo} className="logo" alt="Vite logo" />
-  //       </a>
-  //       <a href="https://react.dev" target="_blank">
-  //         <img src={reactLogo} className="logo react" alt="React logo" />
-  //       </a>
-  //     </div>
-  //     <h1>Vite + React</h1>
-  //     <div className="card">
-  //       <button onClick={() => setCount((count) => count + 1)}>
-  //         count is {count}
-  //       </button>
-  //       <p>
-  //         Edit <code>src/App.tsx</code> and save to test HMR
-  //       </p>
-  //     </div>
-  //     <p className="read-the-docs">
-  //       Click on the Vite and React logos to learn more
-  //     </p>
-  //   </>
-  // )
-
+function App(){
   return (
-    <>
-      <BrowserRouter>
-        <HeaderBar />
-        <SubMenuBar />
-        <Routes>
-          <Route path="/" element={<MatchPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/match-results" element={<MatchResultsPage />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <Router>
+      <div className="app-container">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<CalculatorPage />} />
+            <Route path="/calculator" element={<CalculatorPage />} />
+            {/* 다른 라우트들을 여기에 추가 */}
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

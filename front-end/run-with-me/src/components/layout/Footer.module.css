@@ -1,0 +1,22 @@
+.footer {
+  background-color: var(--black-secondary, #1E1E1E);
+  color: var(--text-secondary, #A0A0A0);
+  padding: 20px 30px;
+  text-align: center;
+  border-top: 1px solid var(--border-color, #333);
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: var(--text-secondary, #A0A0A0);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--electric-blue, #7DF9FF);
+}

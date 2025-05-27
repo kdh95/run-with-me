@@ -1,0 +1,34 @@
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.button { /* 기본 버튼 스타일 (ModeSelector와 유사하게 또는 다르게) */
+  flex-grow: 1;
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  background-color: var(--button-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+  border-color: var(--accent-blue-rgb);
+  color: var(--accent-blue-rgb);
+}
+
+.calculateButton { /* 계산하기 버튼은 특별히 강조 */
+  background-color: var(--accent-blue);
+  color: var(--black-primary);
+  border-color: var(--accent-blue);
+}
+
+.calculateButton:hover {
+  background-color: var(--accent-blue-rgb);
+  border-color: var(--accent-blue-rgb);
+  color: var(--black-primary);
+}

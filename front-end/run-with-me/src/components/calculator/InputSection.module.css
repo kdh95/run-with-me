@@ -1,0 +1,80 @@
+.inputGroup {
+  margin-bottom: 20px; /* 그룹 간 간격 증가 */
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  margin-bottom: 8px; /* 레이블과 인풋 사이 간격 증가 */
+  font-size: 0.95rem; /* 레이블 폰트 약간 키움 */
+  color: var(--text-secondary);
+  font-weight: bold;
+}
+
+/* 거리 입력 필드와 단위 선택을 한 줄에 배치하기 위한 스타일 */
+.distanceInputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.distanceValue {
+  flex-grow: 1; /* 숫자 입력 필드가 남은 공간을 채우도록 */
+  margin-right: 10px; /* 숫자 입력과 단위 선택 사이 간격 */
+}
+
+.distanceUnit {
+  /* 필요한 경우 여기에 추가 스타일 */
+}
+
+
+/* 공통 입력 필드 스타일 */
+.inputGroup input[type="number"],
+.inputGroup input[type="text"],
+.inputGroup select {
+  padding: 12px 15px; /* 패딩 증가 */
+  background-color: var(--black-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px; /* 좀 더 둥글게 */
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+  outline: none;
+  border-color: var(--electric-blue);
+  box-shadow: 0 0 0 3px rgba(var(--electric-blue-rgb, 125, 249, 255), 0.3); /* 포커스 시 글로우 효과 (electric-blue-rgb는 CSS 변수로 정의 필요) */
+}
+/* :root { --electric-blue-rgb: 125, 249, 255; } /* index.css 에 추가 */
+
+
+.inlineInputs {
+  display: flex;
+  align-items: center;
+}
+
+.inlineInputs input[type="text"] {
+  width: 60px; /* 너비 약간 증가 */
+  text-align: center;
+  margin: 0 5px; /* 좌우 마진 */
+}
+.inlineInputs input[type="text"]:first-child {
+  margin-left: 0;
+}
+.inlineInputs input[type="text"]:last-of-type { /* 시간 입력의 초, 페이스 입력의 초 */
+  /* 필요한 경우 마지막 요소에 대한 추가 스타일 */
+}
+
+
+.inlineInputs span {
+  color: var(--text-secondary);
+  font-size: 1.2rem; /* 콜론, 따옴표 등 기호 크기 */
+  margin: 0 3px;
+}
+
+.paceUnitSuffix {
+  margin-left: 8px !important; /* 단위 표시자 간격 */
+  font-size: 1rem !important; /* 단위 표시자 폰트 크기 */
+  color: var(--text-secondary) !important;
+}

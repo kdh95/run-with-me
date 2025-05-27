@@ -1,0 +1,32 @@
+/* components/calculator/EnvironmentSelector.module.css */
+
+.buttonGroup {
+  display: flex;
+  gap: 10px; /* 버튼 사이 간격 */
+}
+
+.button {
+  flex-grow: 1; /* 버튼들이 공간을 동일하게 차지하도록 */
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-weight: bold; /* 폰트 굵게 */
+  color: var(--text-primary);
+  background-color: var(--button-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 6px; /* 모서리 둥글게 */
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.button:hover {
+  border-color: var(--accent-blue-hover, #0056b3); /* 호버 시 테두리 색 변경 */
+  color: var(--accent-blue-hover, #0056b3); /* 호버 시 텍스트 색 변경 */
+}
+
+.button.active { /* 활성화된 버튼 스타일 */
+  background-color: var(--accent-blue, #0070F3);
+  color: white; /* 활성 버튼 텍스트 색 (파란 배경에 흰색이 잘 보임) */
+  border-color: var(--accent-blue, #0070F3);
+  /* box-shadow: 0 0 8px rgba(var(--accent-blue-rgb), 0.5); */ /* 선택적: 활성 시 그림자 효과 */
+}

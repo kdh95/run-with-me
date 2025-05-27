@@ -1,0 +1,30 @@
+.buttonGroup { /* 버튼들을 감싸는 div가 있다면 사용, 없다면 직접 버튼에 스타일 적용 */
+  display: flex;
+  gap: 10px; /* 버튼 사이 간격 */
+}
+
+.button {
+  flex-grow: 1; /* 버튼들이 공간을 동일하게 차지하도록 */
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  background-color: var(--button-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  text-align: center;
+}
+
+.button:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.button.active { /* 활성화된 버튼 스타일 */
+  background-color: var(--accent-blue);
+  color: var(--black-primary);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 8px var(--accent-blue);
+}

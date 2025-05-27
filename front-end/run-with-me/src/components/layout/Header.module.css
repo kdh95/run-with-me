@@ -1,0 +1,119 @@
+.header {
+  background-color: var(--black-secondary);
+  padding: 0 20px; /* 헤더 좌우 패딩 */
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  left: 0; /* 추가 */
+  right: 0; /* 추가 */
+  z-index: 1000;
+  width: 100%; /* .app-container 내부에서 100% */
+  box-sizing: border-box;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%; /* .header 내부에서 100% */
+  /* max-width는 .app-container에서 이미 제어하므로 여기선 필요 없을 수 있음 */
+  /* margin: 0 auto; */ /* .header가 이미 .app-container 내부에 있으므로 불필요 */
+}
+
+.logoContainer {
+  /* 로고 컨테이너 스타일 */
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.desktopNavLinks {
+  display: none;
+}
+
+.navLink {
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--accent-blue);
+}
+
+.hamburgerButton {
+  background: none;
+  border: none;
+  color: var(--accent-blue);
+  font-size: 2rem;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  line-height: 1; /* 아이콘 정렬을 위해 추가 */
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(var(--black-secondary-rgb, 20, 20, 20), 0.98); /* 약간의 투명도와 fallback 값, --black-secondary-rgb 변수 정의 필요 */
+  backdrop-filter: blur(5px); /* 배경 블러 효과 (선택 사항) */
+  position: fixed;
+  top: 70px; /* 헤더 높이 아래부터 */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  padding-top: 20px;
+  z-index: 999; /* 헤더 바로 아래 */
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+/* :root 에 --black-secondary-rgb: 30, 30, 30; 추가 */
+
+
+.mobileMenuItem {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 18px 0;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.mobileMenuItem:last-child {
+  border-bottom: none;
+}
+
+.mobileMenuItem:hover {
+  color: var(--accent-blue);
+  background-color: rgba(var(--accent-blue-rgb), 0.1);
+}
+
+@media (min-width: 769px) {
+  .desktopNavLinks {
+    display: flex;
+  }
+  .hamburgerButton {
+    display: none;
+  }
+  .mobileMenu {
+    display: none !important; /* JS 상태와 관계없이 항상 숨김 */
+  }
+}

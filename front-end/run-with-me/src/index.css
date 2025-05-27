@@ -1,72 +1,100 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* src/index.css 또는 src/App.css */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 기본적인 브라우저 스타일 초기화 (선택 사항이지만 권장) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* 모든 요소에 box-sizing 적용 */
 }
 
-a {
-  font-weight: 500;
-  color: #2563eb;
-  text-decoration: none;
-}
-a:hover {
-  color: #1d4ed8;
+html {
+  line-height: 1.15; /* 기본 줄 간격 */
+  -webkit-text-size-adjust: 100%; /* iOS Safari 텍스트 크기 조정 방지 */
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #121212;
-  color: #ffffff;
-  font-family: "Pretendard", "Segoe UI", sans-serif;
+  margin: 0; /* body의 기본 마진 제거 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  background-color: #0c0c0c; /* 화면의 가장 바깥쪽 배경색 */
+  color: var(--text-primary, #E0E0E0); /* body의 기본 텍스트 색상 */
+
+  /* === 가로 중앙 정렬을 위한 핵심 스타일 === */
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center; /* body의 직계 자식(#root)을 가로 중앙으로 정렬 */
+  min-height: 100vh;     /* body가 최소한 화면 전체 높이를 차지하도록 함 */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* React 앱이 렌더링되는 #root 요소 */
+#root {
+  width: 100%; /* body의 flex item으로서 주어진 공간을 100% 사용 */
+                /* 이 너비는 .app-container의 max-width에 의해 최종적으로 제한됨 */
+  display: flex; /* #root 자체도 flex 컨테이너가 되어 .app-container를 정렬할 수 있게 함 */
+  flex-direction: column; /* .app-container가 수직으로 쌓이도록 함 */
+  align-items: center;    /* .app-container를 #root 내에서 가로 중앙 정렬 (실질적으로 .app-container의 max-width가 #root보다 작을 때 의미가 있음) */
 }
 
+/* :root 변수 정의 */
+:root {
+  --accent-blue: #0070F3;
+  --accent-blue-hover: #0056b3;
+  --accent-blue-rgb: 0, 112, 243;
+
+  --black-primary: #121212;   /* 앱 콘텐츠의 주 배경색 */
+  --black-secondary: #1E1E1E; /* 헤더, 푸터, 컴포넌트 내부 등의 보조 배경색 */
+  --text-primary: #E0E0E0;   /* 주 텍스트 색상 */
+  --text-secondary: #A0A0A0; /* 보조 텍스트 색상 */
+  --border-color: #333333;   /* 테두리 색상 */
+  --button-bg: #2a2a2a;      /* 기본 버튼 배경색 */
+}
+
+/* 스크롤바 스타일 (선택 사항) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-blue);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue-hover);
+}
+
+/* .app-container 스타일 */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;            /* #root 내부에서 너비를 100% 차지 */
+  max-width: 1200px;     /* 앱 콘텐츠의 최대 너비 제한 */
+  min-height: 100vh;      /* 앱 컨테이너가 최소 화면 높이를 채우도록 함 */
+  background-color: var(--black-primary); /* 앱의 주 배경색 */
+  box-shadow: 0 0 25px rgba(0,0,0,0.4); /* 넓은 화면에서의 시각적 구분 (선택 사항) */
+  /* margin 속성은 body 또는 #root에서 중앙 정렬을 담당하므로 여기서는 필요 없음 */
+}
+
+/* 메인 콘텐츠 영역 스타일 */
+.main-content {
+  flex-grow: 1; /* Header와 Footer를 제외한 나머지 공간을 모두 차지 */
+  width: 100%;   /* .app-container 너비에 맞춤 */
+}
+
+/* 링크 및 버튼 기본 스타일 */
+a {
+  text-decoration: none;
+  color: var(--accent-blue);
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--accent-blue-hover);
+}
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  cursor: pointer; /* 버튼에 커서 포인터 추가 */
 }
