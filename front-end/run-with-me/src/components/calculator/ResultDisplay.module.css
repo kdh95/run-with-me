@@ -1,20 +1,36 @@
+/* 기존 .resultContainer, .mainResult, .subResult 스타일 ... */
 .resultContainer {
-  padding: 20px; /* 결과 표시 영역 패딩 */
-  border-top: 1px solid var(--border-color); /* 상단 구분선 */
-  margin-top: 20px; /* 위쪽 요소와의 간격 */
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 20px;
+  text-align: center; /* 내부 텍스트들 중앙 정렬 */
 }
 
-.resultContainer h3 {
-  color: var(--electric-blue);
-  font-size: 2rem; /* 결과 폰트 크기 증가 */
+.mainResult { /* 이전 h3 스타일 -> .mainResult */
+  color: var(--accent-blue);
+  font-size: 2rem;
   font-weight: bold;
-  text-align: center;
+  margin-top: 0; /* 추가 */
   margin-bottom: 10px;
-  word-break: keep-all; /* 긴 결과가 줄바꿈될 때 단어 단위로 */
+  word-break: keep-all;
 }
 
-.resultContainer p {
+.subResult { /* 이전 p 스타일 -> .subResult */
   color: var(--text-secondary);
-  text-align: center;
-  font-size: 1.1rem; /* 트레드밀 속도 폰트 크기 증가 */
+  font-size: 1.1rem;
+  margin-top: 5px; /* 추가 */
+  margin-bottom: 15px; /* 칼로리와의 간격 */
+}
+
+/* === 새로 추가 === */
+.calorieResult {
+  font-size: 1.2rem; /* 칼로리 폰트 크기 */
+  color: var(--text-primary);
+  margin-top: 15px; /* 위 결과와의 간격 */
+  margin-bottom: 0; /* 마지막 요소이므로 하단 마진 제거 */
+}
+
+.calorieResult strong {
+  color: var(--accent-blue); /* 칼로리 값 강조 */
+  font-weight: bold;
 }

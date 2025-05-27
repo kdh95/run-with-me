@@ -12,3 +12,5 @@ export interface PaceInputState {
   minutes: string;
   seconds: string;
 }
+
+export type Gender = 'male' | 'female' | ''; // 성별 타입
