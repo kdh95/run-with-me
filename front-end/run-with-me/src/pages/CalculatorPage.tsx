@@ -1,5 +1,5 @@
 // src/pages/CalculatorPage.tsx
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import styles from './CalculatorPage.module.css';
 
 import type {
@@ -30,7 +30,7 @@ const getMETs = (paceMinPerKm: number): number => {
   return 14.0;                             // 최상위권 (3:41/km 미만)
 };
 
-function CalculatorPage(): JSX.Element {
+function CalculatorPage() {
   // 기존 상태 변수들 ...
   const [calculationMode, setCalculationMode] = useState<CalculationMode>('pace');
   const [environment, setEnvironment] = useState<Environment>('outdoor');
